@@ -1,0 +1,70 @@
+.rightDiv{
+    border: 2px solid yellow;
+    width: 80%;
+    margin-top: 30px;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.invoiceLogo{
+    /* border: 2px solid red; */
+    background-image: url('../img/test.jpg');
+    width: 50%;
+    height: 75px;
+}
+
+.invoiceInfoDiv{
+    margin-top: 20px;
+    border-top: 2px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+table{
+    border: 2px dotted turquoise;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 80%;
+    overflow: hidden;
+}
+
+table th{
+    background-color: lightgray;
+    height: 40px;
+    text-align: center;
+}
+
+.empty{
+    visibility: hidden;
+}
+
+table td{
+    border: 1px solid grey;
+    height: 40px;
+    text-align: center;
+}
+
+.payHowDiv{
+    border: 2px dotted red;
+    width: 80%;
+}
+
+.payHowDiv h3{
+    text-align: center;
+}
+
+.payHowDiv .formControl{
+    margin-left: 20px;
+}
+
+.payHowDiv .subBut{
+    margin-left: 40%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+}

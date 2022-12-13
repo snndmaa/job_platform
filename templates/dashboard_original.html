@@ -1,0 +1,103 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <title>Dashboard</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <nav class="navbar">
+
+            <div class="topbar">
+
+                <p>Welcome username</p>
+
+                <a href="">Back to Homepage</a>
+
+                <p>icon</p>
+            </div>
+
+            <div class="midbar">
+
+                <img src="{% static 'img/clong.png' %}" alt="Logo">
+                <h3 style="color: blue;">Total Job Credits: 0</h3>
+                <div class="butAlign">
+
+                    <button>Purchase Job Credits</button>
+
+                </div>
+
+            </div>
+
+            <div class="endbar"></div>
+
+        </nav>
+
+
+        <div class="dashContent">
+
+            <div class="leftContent">
+                <br>
+                <div class="picDiv">
+                    <img src="{% static 'img/profile.png' %}" alt="Profile Picture">
+                    <br>
+                    <button style="margin-left: 20%;">Change Profile Picture</button>
+                </div>
+
+                <div class="leftOptions">
+
+                    <a href="">Dashboard</a>
+                    <a href="">Paid Job Post</a>
+                    <a href="">Manage Paid Posts</a>
+                    <a href="">Free Job Post</a>
+                    <a href="">Manage Free Posts</a>
+                    <a href="">Add Company</a>
+                    <a href="">Manage Companies</a>
+                    <a href="">Buy Job Credits</a>
+                    <a href="">Manage Invoices</a>
+                    <a href="">Transactions</a>
+
+                </div>
+
+                <div class="leftHelp">
+
+                    <div class="topHelp">
+                        Need Some Help?
+                    </div>
+
+                    <div class="bottomHelp">
+                        <p style="font-size: larger;">
+                            Call: 07012345567
+                        or Email: support@support.com.ng
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="rightContent">
+
+                <div class="rightOptions">
+
+                    <a href="">Paid Job Post</a>
+                    <a href="">Manage Paid Posts</a>
+                    <a href="">Free Job Post</a>
+                    <a href="">Manage Free Posts</a>
+                    
+                </div>
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

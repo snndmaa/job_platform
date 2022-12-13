@@ -1,0 +1,85 @@
+.dashContent{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.dashContent form{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 70%;
+    /* border: 2px dotted lightgrey; */
+    border-radius: 5px;
+    justify-content: center;
+    background-color: #F6F6F6;
+    margin-top: 40px;
+    align-items: center;
+}
+
+.formControl{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.formControl:nth-child(3){
+    margin-top: 20px;
+}
+
+.formControl label{
+    font-size: x-large;
+}
+
+.formControl input{
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.remDiv{
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+}
+
+.remDiv input{
+    width: 20px;
+    height: 20px;
+}
+
+.remDiv label{
+    font-size: x-large;
+}
+
+.subBut{
+    margin-top: 15px;
+    height: 9%;
+    width: 80%;
+    background-color: #D71D0D;
+    color: white;
+    border-radius: 5px;
+    font-size: large;
+}
+
+/* remove up and down arrows from number input */
+/* Chrome, Safari, Edge, Opera */
+.numInput::-webkit-outer-spin-button,
+.numInput::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Smaller Screens */
+@media only screen and (max-width: 500px){
+    .dashContent form{
+        width: 70%;
+        height: 85%;
+    }
+
+}

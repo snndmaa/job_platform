@@ -1,0 +1,116 @@
+.rightDiv{
+    /* border: 2px solid yellowgreen; */
+    width: 97%;
+    margin-top: 20px;
+    margin-left: 3%;
+    display: flex;
+}
+
+.lRightDiv{
+    /* border: 2px dotted blue; */
+    /* border-radius: 20px; */
+    width: 70%;
+}
+
+.lRightDiv table{
+    width: 100%;
+    /* border-radius: 20px; */
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.lRightDiv th{
+    text-align: center;
+    /* border: 1px solid grey; */
+    width: 20%;
+    /* background-color: #DADADA; */
+    background-color: lightcoral;
+    height: 40px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.lRightDiv td:nth-of-type(1){
+    border-left: 1px solid grey;
+}
+
+.lRightDiv td:nth-of-type(4){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lRightDiv td{
+    text-align: center;
+    height: 60px;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+.buyCredDiv{
+    width: fit-content;
+    background-color: orange;
+    padding: 3.5px;
+    border-radius: 2px;
+    color: white;
+}
+
+.pubDiv{
+    width: fit-content;
+    background-color: #00D41C;
+    padding: 3.5px;
+    border-radius: 2px;
+    color: white;
+
+}
+
+table .lTableFoot{
+    height: fit-content;
+    background-color: lightcoral;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+table .lTableFoot a{
+    text-decoration: none;
+}
+
+.rRightDiv{
+    width: 27.5%;
+    margin-left: 2.5%;
+}
+
+.rRightDiv table{
+    width: 100%;
+}
+
+.rRightDiv th{
+    text-align: center;
+    width: 50%;
+    background-color: lightcoral;
+    height: 40px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.rRightDiv td{
+    text-align: center;
+    height: 40px;
+    border-bottom: 1px solid grey;
+    border-right: 1px solid grey;
+}
+
+.rRightDiv td:nth-of-type(1){
+    border-left: 1px solid grey;
+}
+
+table .rTableFoot{
+    height: fit-content;
+    background-color: lightcoral;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+table .rTableFoot a{
+    text-decoration: none;
+}

@@ -1,0 +1,390 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/barFilt.css' %}">
+    <title>crecruite jobs</title>
+</head>
+<body>
+    <div class="container">
+
+        <nav class="navContainer">
+
+            <div class="navTopBar"></div>
+
+            <div class="navContent">
+
+                <div class="navLogo">
+                    <img src="{% static 'img/clong.png' %}" alt="">
+                </div>
+               
+                <div class="navLinks">
+                    <a href="{% url 'dashboard' %}">Recruiter - Dashboard</a>
+                    <a href="{% url 'paidpost' %}">Paid Job Post</a>
+                    <a href="{% url 'buycredit' %}">Paid Job Plans</a>
+                    <a href="{% url 'freepost' %}">Free Job Post</a>
+                    <a href="{% url 'login' %}">Recruiter - Login</a>
+
+                </div>
+
+
+            </div>
+
+            <div class="navFootDiv">
+                <div class="navFootBar1"></div>
+                <div class="navFootBar2"></div>
+    
+            </div>
+        </nav>
+
+
+
+        <div class="adsense1"></div>
+
+        <br>
+
+        <div class="searchCon">
+            <div class="searchDiv">
+                <form action="{% url 'search' %}" method="GET">
+                    <input placeholder="Search the job or company" type="text" name="keyword" class="searchbox">
+                    <input type="submit" value="Search" class="searchbut">
+                </form>
+            </div>
+        </div>
+   
+        <br>
+
+        <div class="categoryCon">
+            
+            <div class="categoryDiv">
+
+                <a href="{% url 'featuredblock' %}">Featured Jobs</a>
+                <a href="{% url 'todayblock' %}">Todays Jobs</a>
+                <a href="{% url 'yesterdayblock' %}">Yesterdays Jobs</a>
+                <a href="{% url 'blockfilt' 'Field' %}">Jobs by Field</a>
+                <a href="{% url 'blockfilt' 'Role' %}">Jobs by Role</a>
+                <a href="{% url 'blockfilt' 'Industry' %}">Jobs by Industry</a>
+                <a href="{% url 'blockfilt' 'Discipline' %}">Jobs by Subject</a> <!-- Displine/Field -->
+                <a href="{% url 'blockfilt' 'State' %}">Jobs by State</a>
+                <a href="{% url 'blockfilt' 'Region' %}">Jobs by Region</a>
+                <a href="{% url 'home' %}">All Jobs</a>
+                <a href="{% url 'closeblock' %}">Close</a>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="bodyContainer">
+
+            <div class="leftCon">
+
+                <a class="freelink" href="">POST JOBS FREE</a>
+
+                <div class="leftJobByState">
+                    <a href="">Jobs in Lagos State</a>
+                    <a href="">Jobs in Abuja FCT</a>
+                    <a href="">Jobs in Rivers State</a>
+                    <a href="">Jobs in Oyo State</a>
+                    <a href="">Jobs in Enugu State</a>
+                    <a href="">Jobs in Edo State</a>
+                    <a href="">Jobs in Kaduna State</a>
+                    <a href="">Click here to see more states</a>
+
+                </div>
+
+                <div class="leftCertjobs">
+
+                    <a href="">FSLC Jobs in Nigeria</a>
+                    <a href="">SSCE/GCE/NECO Jobs</a>
+                    <a href="">OND/NCE Jobs in Nigeria</a>
+                    <a href="">HND Jobs in Nigeria</a>
+                    <a href="">BSc/BA/BEng Jobs</a>
+                    <a href="">LL.B/BL Jobs in Nigeria</a>
+                    <a href="">B.Pharm Jobs in Nigeria</a>
+                    <a href="">MBBS/MBBCh Jobs</a>
+                    <a href="">MSc/MA Jobs in Nigeria</a>
+                    <a href="">PhD Jobs in Nigeria</a>
+                    <br>
+                    <br>
+
+                </div>
+
+                <div class="subCatCon">
+
+                    <p>Sub Category</p>
+
+                    <div class="subCatDiv">
+
+                        <a href="">Trainee/Graduate Jobs</a>
+                        <a href="">Administrative Jobs in Nigeria</a>
+                        <a href="">Advertising Jobs in Nigeria</a>
+                        <a href="">Accounting Jobs in Nigeria</a>
+                        <a href="">Auditing Jobs in Nigeria</a>
+                        <a href="">Art Jobs in Nigeria</a>
+                        <a href="">Android/IOS Developer Jobs in Nigeria</a>
+                        <a href="">Agriculture Jobs in Nigeria</a>
+                        <a href="">Architecture Jobs in Nigeria</a>
+                        <a href="">Aviation Jobs in Nigeria</a>
+                        <a href="">Automobile Jobs in Nigeria</a>
+                        <a href="">Banking Jobs in Nigeria</a>
+                        <a href="">Computer and InfoTech Jobs</a>
+                        <a href="">Computer/IT Support Jobs</a>
+                        <a href="">Customer Support Jobs</a>
+                        <a href="">Civil Engineering Jobs</a>
+                        <a href="">Cook/Chef Jobs</a>
+                        <a href="">Database Jobs in Nigeria</a>
+                        <a href="">Driving/Dispatch Rider Jobs</a>
+                        <a href="">Education Jobs for Nigerians</a>
+                        <a href="">Real Estate Jobs</a>
+                        <a href="">Electrical/Electronics Jobs</a>
+                        <a href="">Engineering Jobs in Nigeria</a>
+                        <a href="">Facility Mgt Jobs in Nigeria</a>
+                        <a href="">Finance Jobs in Nigeria</a>
+                        <a href="">Front Desk Jobs in Nigeria</a>
+                        <a href="">Geology Jobs</a>
+                        <a href="">Government Jobs in Nigeria</a>
+                        <a href="">Graphics Design Jobs</a>
+                        <a href="">Hospitality Jobs in Nigeria</a>
+                        <a href="">Hotel Jobs in Nigeria</a>
+                        <a href="">HR Jobs in Nigeria</a>
+                        <a href="">Industrial Attachment(Internship)</a>
+                        <a href="">Insurance Jobs in Nigeria</a>
+                        <a href="">Journalism/Content Writing Jobs</a>
+                        <a href="">Law Enforcement/Security Jobs</a>
+                        <a href="">Lecturing Jobs in Nigeria</a>
+                        <a href="">Law/Legal Jobs in Nigeria</a>
+                        <a href="">Linux/Unix Jobs Nigeria</a>
+                        <a href="">Marketing & Sales Jobs</a>
+                        <a href="">Maritime & Shipping Jobs</a>
+                        <a href="">Medical & Healthcare Jobs</a>
+                        <a href="">Military Jobs in Nigeria</a>
+                        <a href="">Computer Networking Jobs</a>
+                        <a href="">NGO Jobs in Nigeria</a>
+                        <a href="">Oil & Gas Jobs in Nigeria</a>
+                        <a href="">Oracle Jobs in Nigeria</a>
+                        <a href="">Personal Assistant Jobs</a>
+                        <a href="">PHP & MySQL Jobs in Nigeria</a>
+                        <a href="">Physician/Medical Officer Jobs</a>
+                        <a href="">Public Relation Jobs</a>
+                        <a href="">Programming/Software jobs</a>
+                        <a href="">Pri/Sec Teaching Jobs</a>
+                        <a href="">Real Estate Jobs in Nigeria</a>
+                        <a href="">Remote/Work-at-home Jobs</a>
+                        <a href="">Research Jobs in Nigeria</a>
+                        <a href="">Safety & Health Jobs</a>
+                        <a href="">Secretarial Jobs in Nigeria</a>
+                        <a href="">Security Jobs in Nigeria</a>
+                        <a href="">Sales Jobs</a>
+                        <a href="">Shipping & Maritime Jobs</a>
+                        <a href="">Student Jobs in Nigeria</a>
+                        <a href="">Software Developer Jobs</a>
+                        <a href="">System Admin Jobs in Nigeria</a>
+                        <a href="">Teaching Jobs in Nigeria</a>
+                        <a href="">Telecommunication Jobs</a>
+                        <a href="">Semi-skilled/Factory Work</a>
+                        <a href="">Volunteer Jobs Nigeria</a>
+                        <a href="">Web Developer Jobs Nigeria</a>
+                        <a href="">Web Designer/Frontend/UI Jobs</a>
+                    
+                    
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="midCon">
+
+                <div class="midSearchCon">
+
+                    <div class="midSearchDiv">
+
+                        <a href="">Crecruite Jobs Google powered Search</a>
+                        
+                        <div class="midSearchBox">
+    
+                            <input type="text" name="">
+                            <input type="submit" value="Search">
+                        </div>
+    
+                    </div>
+
+                </div>
+
+                <div class="midContent">
+                    
+                    <div class="optionDiv">
+
+                        <h2>Select Job Query</h2>
+
+                        <div class="optionLinks">
+                            {% for object in objects %}
+                                <a href="{% url 'fieldblock' object.id %}">{{ object }}</a>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                    
+
+
+                </div>
+
+            </div>
+
+            <div class="rightCon">
+
+                <div class="rightFiltDiv">
+
+                    <p class="filterLabel">Job Filter</p>
+
+                    <form>
+
+                        <div class="rInnerFilt">
+                        
+
+                            <div class="filtControl1">
+
+                                <input type="radio" name="field">
+                                <label for="">Field</label>
+    
+                                <input type="radio" name="role">
+                                <label for="">Role</label>
+    
+                                <input type="radio" name="industry">
+                                <label for="industry">Industry</label>
+    
+                                <br>
+
+                                <input type="radio" name="discipline">
+                                <label for="discipline">Discipline</label>
+    
+                                <input type="radio" name="keyword">
+                                <label for="keyword">Keyword</label>
+
+                            </div>
+
+
+                            <div class="filtControl2">
+
+                                <label for="jobField">Job Field:</label>
+                                <input type="text" name="jobField" placeholder="Choose Fields">
+
+                            </div>
+
+                            <div class="filtControl3">
+
+                                <input type="radio" name="state">
+                                <label for="state">State</label>
+
+                                <input type="radio" name="region">
+                                <label for="region">Region</label>
+
+                                <input type="radio" name="nation">
+                                <label for="nation">Nationwide</label>
+
+                            </div>
+
+                            <div class="filtControl4">
+
+                                <label for="duration">Duration:</label>
+                                <select name="duration">
+
+                                    <option value="">Today</option>
+                                    <option value="">Yesterday</option>
+                                    <option value="">This Week</option>
+                                    <option value="">Last Week</option>
+                                    <option value="">Two Weeks Ago</option>
+                                    <option value="">Three Weeks Ago</option>
+                                    <option value="">This Month</option>
+                                    <option value="">Last Month</option>
+                                    <option value="">2 Months Ago</option>
+                                    <option value="">No Time Limit</option>
+
+                                </select>
+
+                            </div>
+
+
+                        </div>
+
+                        <input class="filtSubmit" type="submit" value="Set Filter">
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    </div>
+</body>
+</html>

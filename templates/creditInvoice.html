@@ -1,0 +1,169 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/creditInvoice.css' %}">
+    <title>Credit Invoice</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <nav class="navbar">
+
+            <div class="topbar">
+
+                <p>Welcome {{ profile.user.full_name }}</p>
+  
+                <a href="{% url 'home' %}">Back to Homepage</a>
+  
+                {% include 'dropDiv.html' %}
+                  
+              </div>
+  
+              <div class="midbar">
+  
+                  <img onclick="window.location.href='./'" src="{% static 'img/clong.png' %}" alt="Logo">
+                  <h3 style="color: blue;">Total Job Credits: {{ profile.credit }}</h3>
+                <div class="butAlign">
+
+                    <button onclick="window.location.href='./buycredit'">Purchase Job Credits</button>
+
+                </div>
+
+            </div>
+
+            <div class="endbar"></div>
+
+        </nav>
+
+
+        <div class="dashContent">
+
+            <div class="leftContent">
+                <br>
+                <div class="picDiv">
+                    <img src="{% if profile.profile_pic.url %}{{ profile.profile_pic.url }}{% else %}{% static 'img/profile.png' %}{% endif %}" alt="Profile Picture">                    <br>
+                    <button style="margin-left: 20%;">Change Profile Picture</button>
+                </div>
+
+                <div class="leftOptions">
+
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/paidpost">Paid Job Post</a>
+                    <!-- <a href="">Manage Paid Posts</a> -->
+                    <a href="/freepost">Free Job Post</a>
+                    <!-- <a href="">Manage Free Posts</a> -->
+                    <a href="/addCompany">Add Company</a>
+                    <a href="/manageCompanies">Manage Companies</a>
+                    <a href="/buycredit">Buy Job Credits</a>
+                    <a href="/manageInvoice">Manage Invoices</a>
+                    <!-- <a href="">Transactions</a> -->
+
+                </div>
+
+                <div class="leftHelp">
+
+                    <div class="topHelp">
+                        Need Some Help?
+                    </div>
+
+                    {% include 'bottomHelp.html' %}
+                </div>
+
+            </div>
+
+            <div class="rightContent">
+
+                <div class="rightOptions">
+
+                    <a href="/paidpost">Paid Job Post</a>
+                    <a href="/manageCompanies">Manage Companies</a>
+                    <a href="/freepost">Free Job Post</a>
+                    <a href="/manageInvoice">Manage Invoices</a>
+                    
+                </div>
+                
+                <div class="rightDiv">
+
+                    <h2>CRecruite Invoice</h2>
+
+                    <div class="invoiceLogo"></div>
+
+                    <div class="invoiceInfoDiv">
+                        <p>Bill to: {{user.full_name}}</p>
+                        <p>Invoice No: 1233123422</p>
+                        <p>Date: {{date}}</p>
+                    </div>
+
+                    <table>
+
+                        <tr>
+                            <th>Description</th>
+                            <th>Validity</th>
+                            <th>Price</th>
+                            <th>Rate</th>
+                            <th>Amount</th>
+                        </tr>
+
+                        <tr>
+                            <td>{{credit}} Job Credit</td>
+                            <td>1 Year</td>
+                            <td>&#8358;{{amount}}</td>
+                            <td>1</td>
+                            <td>&#8358;{{amount}}</td>
+                        </tr>
+
+                        <tr>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td>Amount Due</td>
+                            <td>&#8358;{{amount}}</td>
+                        </tr>
+
+                    </table>
+
+                    <div class="payHowDiv">
+                        
+                        <h3>How would you like to make payment?</h3>
+                    
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="formControl">
+ 
+                                <input type="radio" name="payMethod" value="paystack">
+                                <label for="">Online Payment (Paystack - Mastercard, Visa, Verve, USSD, Bank Pay etc.)</label>
+
+                            </div>
+
+                            <br>
+
+                            <div class="formcontrol">
+
+                                <input type="radio" name="payMethod" value="bankTransfer">
+                                <label for="">Bank Transfer / Deposit / Cheque</label>
+
+                            </div>
+
+                            <br>
+
+                            <input class="subBut" type="submit" value="Pay Now">
+
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

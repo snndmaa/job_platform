@@ -1,0 +1,58 @@
+.rightDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+table{
+    width: 90%;
+    /* border: 2px dotted orange; */
+    border-radius: 15px;
+    background-color: lightcoral;
+    color: white;
+}
+
+table th{
+    font-size: x-large;
+    border-bottom: 1px solid grey;
+}
+
+.tableSub{
+    border-bottom: 1px solid grey;
+    height: 125px;
+}
+
+.tablePrice{
+    height: 40px;
+}
+
+.tablePrice td:nth-of-type(1){
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.tablePrice td:nth-of-type(2){
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.tablePrice td:nth-of-type(3){
+    border-bottom: 1px solid grey;
+}
+
+.tablePrice input{
+    width: 20px;
+    height: 20px;
+}
+
+.tableButDiv{
+    height: 40px;
+    margin-left: 50%;
+    text-align: center;
+}
+
+.tableButDiv input{
+    height: 30px;
+    border-radius: 10px;
+}

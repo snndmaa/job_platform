@@ -1,0 +1,24 @@
+.rightDiv{
+    width: 100%;
+    height: 71vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payinfo{
+    background-color: green;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.payinfo h1{
+    color: white;
+}
+
+.payinfo a{
+    text-align: center;
+}

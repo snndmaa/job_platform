@@ -1,0 +1,10 @@
+{% load static %}
+<div class="dropDiv">
+    <img class="dropIcon" src="{% static 'img/down.png' %}" alt="">
+    <div class="dropContent">
+        <a href="{% url 'dashboard' %}">Dashboard</a>
+        <a href="{% url 'userinfo' %}">Personal Info</a>
+        <a href="{% url 'changepassword' %}">Change Password</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>

@@ -1,0 +1,170 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/managepaid.css' %}">
+    <title>Dashboard</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <nav class="navbar">
+
+            <div class="topbar">
+
+                <p>Welcome {{ profile.user.first_name }}</p>
+
+                <a href="{% url 'home' %}">Back to Homepage</a>
+
+                {% include 'dropDiv.html' %}
+                
+            </div>
+
+            <div class="midbar">
+
+                <img onclick="window.location.href='./'" src="{% static 'img/clong.png' %}" alt="Logo">
+                <h3 style="color: blue;">Total Job Credits: {{ profile.credit }}</h3>
+                <div class="butAlign">
+
+                    <button onclick="window.location.href='./buycredit'">Purchase Job Credits</button>
+
+                </div>
+
+            </div>
+
+            <div class="endbar"></div>
+
+        </nav>
+
+
+        <div class="dashContent">
+
+            <div class="leftContent">
+                <br>
+                <div class="picDiv">
+                    <img src="{% if profile.profile_pic.url %}{{ profile.profile_pic.url }}{% else %}{% static 'img/profile.png' %}{% endif %}" alt="Profile Picture">
+                    <br>
+                    <form style="margin-left: 20%;" method="POST" class="picForm" enctype="multipart/form-data" action="{% url 'dashboard' %}"><input type="file" id="picup" name="img" accept="image/*"></form>
+                </div>
+
+                <div class="leftOptions">
+
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/paidpost">Paid Job Post</a>
+                    <!-- <a href="">Manage Paid Posts</a> -->
+                    <a href="/freepost">Free Job Post</a>
+                    <!-- <a href="">Manage Free Posts</a> -->
+                    <a href="/addCompany">Add Company</a>
+                    <a href="/manageCompanies">Manage Companies</a>
+                    <a href="/buycredit">Buy Job Credits</a>
+                    <a href="/manageInvoice">Manage Invoices</a>
+                    <!-- <a href="">Transactions</a> -->
+
+                </div>
+
+                <div class="leftHelp">
+
+                    <div class="topHelp">
+                        Need Some Help?
+                    </div>
+
+                    {% include 'bottomHelp.html' %}
+
+
+                </div>
+
+            </div>
+
+            <div class="rightContent">
+
+                <div class="rightOptions">
+
+                    <a href="/paidpost">Paid Job Post</a>
+                    <a href="/manageCompanies">Manage Companies</a>
+                    <a href="/freepost">Free Job Post</a>
+                    <a href="/manageInvoice">Manage Invoices</a>
+                    
+                </div>
+                
+                <div class="tableDiv">
+
+                    <table>
+
+                        <tr class="tableHead">
+                            <th>No</th>
+                            <th>Invoice Number</th>
+                            <th>Date</th>
+                            <th>Plan</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Review</th>
+                        </tr>
+    
+        
+                        {% for record in records %}
+                            <tr>
+                                <td style="border-left: 1px solid grey;">1</td>
+                                <td>{{ record.order_ref }}</td>
+                                <td>{{ record.created_at }}</td>
+                                <td>{{ record.credits_received }}</td>
+                                <td>{{ record.amount_paid }}</td>
+                                <td>
+                                    <div class="statDiv">
+                                        <div id="jobPostItem" class="{% if record.status == False %}buyCredit{% else %}published{% endif %}">{% if record.status == False %}Unpaid{% else %}Paid{% endif %}</div>
+                                    </div>
+                                </td>
+                                <td style="width: 20%;">
+                                    <div class="upDiv">
+    
+                                        {% if record.status == True %}<a href="{% url 'invoiceItem' record.id %}">Invoice</a>{% else %}<a href="">Pay Now</a>{% endif %}
+                                        <!-- <a href="">Edit</a> -->
+                                        <!-- <a onclick="deleteRecord('{{record.id}}')">Delete</a> -->
+    
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <!-- <tr>
+                            <td style="border-left: 1px solid grey;">1</td>
+                            <td>Web Developer</td>
+                            <td>C Recruite</td>
+                            <td>Lagos</td>
+                            <td>10 Mar 2022</td>
+                            <td>
+                                <div class="statDiv">
+                                    <div class="published">Published</div>
+                                </div>
+                            </td>
+                            <td style="width: 20%;">
+                                <div class="upDiv">
+    
+                                    <a href="">View</a>
+                                    <a href="">Edit</a>
+                                    <a href="">Delete</a>
+    
+                                </div>
+                            </td>
+                        </tr> -->
+    
+    
+    
+                    </table>
+                
+                </div>
+
+
+            </div>
+
+            
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>

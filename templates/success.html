@@ -1,0 +1,71 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Crecruite jobs</title>
+
+    <style>
+        .contentBlock{
+            width: 100%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .successDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <nav class="navContainer">
+
+            <div class="navTopBar"></div>
+
+            <div class="navContent">
+
+                <div class="navLogo">
+                    <a href="{% url 'home' %}"><img src="{% static 'img/clong.png' %}" alt=""></a>
+                </div>
+
+
+            </div>
+
+            <div class="navFootDiv">
+                <div class="navFootBar1"></div>
+                <div class="navFootBar2"></div>
+    
+            </div>
+        </nav>
+
+
+
+        <div class="contentBlock">
+
+            <div class="successDiv">
+                <img src="{% static 'img/successTick3.gif' %}" alt="">
+            </div>
+
+        </div>
+
+    <script>
+        setTimeout(() => {
+            if (confirm("Operation Successful")) {
+            location.href = "{% url 'home' %}"
+            } 
+            else {
+            location.href = "{% url 'home' %}"
+            }
+        }, 3000)
+    </script>
+</body>
+</html>

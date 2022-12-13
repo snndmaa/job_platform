@@ -1,0 +1,251 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 20%;
+}
+
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    background-color: #D71D0D;
+}
+
+.topbar p:nth-child(1){
+    margin-left: 10px;
+    font-size: large;
+}
+
+.topbar a{
+    text-decoration: none;
+}
+
+.topbar p:nth-child(2){
+    margin-right: 10px;
+}
+
+.dropDiv{
+    position: relative;
+    display: inline-block;
+}
+
+.dropIcon{
+    margin-right: 10px;
+}
+
+.dropContent{
+    display: none;
+    position: absolute;
+    background-color: #D71D0D;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 70%;
+}
+
+.dropContent a{
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropContent a:hover{
+    background-color: orangered;
+}
+
+.dropDiv:hover .dropContent{
+    display: block;
+}
+
+.dropDiv:hover .dropIcon{
+    background-color: orangered;
+    border-radius: 10px;
+}
+
+.midbar{
+    /* border: 2px solid yellow; */
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* margin-left: 10%; */
+}
+
+.butAlign{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.butAlign button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.endbar{
+    background-color: grey;
+    height: 25%;
+    width: 100%;
+    z-index: -3;
+}
+
+.dashContent{
+    /* border: 2px dotted purple; */
+    display: flex;
+    width: 100%;
+}
+
+.leftContent{
+    /* border: 2px solid yellow; */
+    width: 20%;
+}
+
+.picDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 200px;
+}
+
+.picDiv img{
+    width: 100%;
+    height: 90%;
+    margin-left: 20%;
+    border-radius: 50%;
+}
+
+.leftOptions{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.leftOptions a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+    background-color: #D71D0D;
+    color: white;
+    height: 30px;
+    border: 2px solid black;
+    margin-top: 5px;   
+}
+
+.leftContent a:hover{
+    background-color: #1D2327;
+}
+
+.leftHelp{
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.topHelp{
+    width: 100%;
+    background-color: orange;
+    height: 35px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottomHelp{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rightContent{
+    /* border: 2px solid turquoise; */
+    width: 80%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightOptions{
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.rightOptions a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D71D0D;
+    width: 170px;
+    height: 40px;
+    color: white;
+    text-decoration: none;
+}
+
+.rightOptions a:hover{
+    background-color: #1D2327;
+}
+
+/* Smaller Screens */
+@media only screen and (max-width: 500px){
+    .midbar{
+        height: 40%;
+        align-items: center;
+    }
+    .midbar img{
+        height: 40%;
+    }
+    .midbar h3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0; padding: 0;
+    }
+    .endbar{
+        height: 15%;
+    }
+    .rightOptions{
+        margin: 0;
+    }
+    .topHelp{
+        word-break: break-all;
+    }
+    .bottomHelp{
+        height: 150%;
+        word-break: break-all;
+    }
+}

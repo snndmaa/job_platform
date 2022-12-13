@@ -1,0 +1,393 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/paidjob.css' %}">
+    <title>Paid Job Post</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <nav class="navbar">
+
+            <div class="topbar">
+
+              <p>Welcome {{ profile.user.first_name }}</p>
+
+              <a href="{% url 'home' %}">Back to Homepage</a>
+
+              {% include 'dropDiv.html' %}
+                
+            </div>
+
+            <div class="midbar">
+
+                <img onclick="window.location.href='./'" src="{% static 'img/clong.png' %}" alt="Logo">
+                <h3 style="color: blue;">Total Job Credits: {{ profile.credit }}</h3>
+                <div class="butAlign">
+
+                    <button onclick="window.location.href='./buycredit'">Purchase Job Credits</button>
+
+                </div>
+
+            </div>
+
+            <div class="endbar"></div>
+
+        </nav>
+
+
+        <div class="dashContent">
+
+            <div class="leftContent">
+                <br>
+                <div class="picDiv">
+                  <img src="{% if profile.profile_pic.url %}{{ profile.profile_pic.url }}{% else %}{% static 'img/profile.png' %}{% endif %}" alt="Profile Picture">
+                  <br>
+                    <button style="margin-left: 20%;">Change Profile Picture</button>
+                </div>
+
+                <div class="leftOptions">
+
+                  <a href="/dashboard">Dashboard</a>
+                  <a href="/paidpost">Paid Job Post</a>
+                  <!-- <a href="">Manage Paid Posts</a> -->
+                  <a href="/freepost">Free Job Post</a>
+                  <!-- <a href="">Manage Free Posts</a> -->
+                  <a href="/addCompany">Add Company</a>
+                  <a href="/manageCompanies">Manage Companies</a>
+                  <a href="/buycredit">Buy Job Credits</a>
+                  <a href="/manageInvoice">Manage Invoices</a>
+                  <!-- <a href="">Transactions</a> -->
+
+              </div>
+
+                <div class="leftHelp">
+
+                    <div class="topHelp">
+                        Need Some Help?
+                    </div>
+
+                    {% include 'bottomHelp.html' %}
+
+                </div>
+
+            </div>
+
+            <div class="rightContent">
+
+              <div class="rightOptions">
+
+                <a href="/paidpost">Paid Job Post</a>
+                <a href="/manageCompanies">Manage Companies</a>
+                <a href="/freepost">Free Job Post</a>
+                <a href="/manageInvoice">Manage Invoices</a>
+                
+            </div>
+                
+              <br><br><br><br>
+
+              <div class="rightDiv">
+
+                <form action="" method="POST">
+                  {% csrf_token %}
+                  <h1>Paid Job Listing Form</h1>
+
+                  <div class="postMethod">
+                    <h3>Post Method?</h3>
+                    
+                    <div class="radioDiv">
+                      <input type="radio" name="postMethod" style="width: 25px; height: 25px;" value="normal_post">
+                      <label for="normalPost" style="font-size: larger;">Normal Post</label>
+                    </div>
+
+                    <div class="radioDiv">
+                      <input type="radio" name="postMethod" style="width: 25px; height: 25px;">
+                      <label for="quickPost" style="font-size: larger;">Quick Post</label>  
+                    </div>
+
+                  </div>
+
+                  <div class="compSelect">
+
+                    <label for="selectCompany" style="font-size: x-large;">Select Company:</label>
+                    <select name="selectCompany">
+                      {% for company in companies %}  
+                        <option value="{{ company.id }}">{{ company }}</option>
+                      {% endfor %}
+                    </select>
+
+                  </div>
+
+                  <div class="posTitle">
+
+                    <label for="posTitle">Position Title:</label>
+                    <input type="text" name="posTitle">
+
+                  </div>
+
+                  <div class="jobField addOn">
+
+                    <label for="jobField">Job Field:</label>
+                    <select name="jobField">
+                      {% for field in fields %}
+                        <option value="{{ field.id }}">{{ field.field }}</option>
+                      {% endfor %}
+                    </select>
+
+                  </div>
+
+                  <div class="halfFormBar">
+
+                    <div class="firstBar addOn">
+
+                      <label for="qualification">Qualification:</label>
+                      <select name="qualification">
+                        {% for qualification in qualifications %}
+                          <option value="{{ qualification.id }}">{{ qualification.qualification }}</option>
+                        {% endfor %}
+                      </select>
+
+                    </div>
+
+                    <div class="secondBar">
+
+                      <label for="employType">Employment Type:</label>
+                      <input type="text" name="employType">
+
+                    </div>
+
+                  </div>
+
+                  <div class="halfFormBar">
+
+                    <div class="firstBar addOn">
+
+                      <label for="state">State:</label>
+                      <select name="state">
+                        {% for state in states %}
+                          <option value="{{ state.id }}">{{ state.state }}</option>
+                        {% endfor %}
+                      </select>
+
+                    </div>
+
+                    <div class="secondBar">
+
+                      <label for="city">City/Town:</label>
+                      <input type="text" name="city">
+
+                    </div>
+
+                  </div>
+
+                  <div class="halfFormBar">
+
+                    <div class="firstBar">
+
+                      <label for="minexp">Minimum Experience:</label>
+                      <input type="text" name="minexp">
+
+                    </div>
+
+                    <div class="secondBar">
+
+                      <label for="maxexp">Maximum Experience:</label>
+                      <input type="text" name="maxexp">
+
+                    </div>
+
+                  </div>
+
+                  <div class="quartFormBar">
+
+                    <div class="qsBar">
+
+                      <label for="currency">Salary:</label>
+                      <select name="currency">
+
+                        <option value="naira">Naira</option>
+                        <option value="dollar">US Dollar</option>
+                        <option value="pounds">UK Pounds</option>
+                        <option value="euro">EU Euro</option>
+
+                      </select>
+
+                    </div>
+
+                    <div class="qsBar">
+
+                      <label for="term">Term:</label>
+                      <select name="term">
+
+                        <option value="annual">Annually</option>
+                        <option value="month">Monthly</option>
+
+                      </select>
+
+                    </div>
+
+                    <div class="qtBar">
+
+                      <label for="minsal">Minimum:</label>
+                      <input type="number" name="minsal">
+
+                    </div>
+
+                    <div class="qtBar">
+
+                      <label for="maxsal">Maximum:</label>
+                      <input type="number" name="maxsal">
+
+                    </div>
+
+                  </div>
+
+                  <div class="quartFormBar">
+
+                    <div class="qsBar">
+
+                      <label for="appdead">Deadline:</label>
+                      <select name="appdead">
+
+                        <option value="1 Week">One Week</option>
+                        <option value="2 Weeks">Two Weeks</option>
+                        <option value="3 Weeks">Three Weeks</option>
+                        <option value="month">One Month</option>
+
+                      </select>
+
+                    </div>
+
+                    <div class="qsThreeBar">
+
+                      <label for="date">Deadline Date:</label>
+                      <input type="date" name="date">
+
+                    </div>
+
+
+                  </div>
+
+                  <!-- ADD -->
+
+                  <div class="quartFormBar">
+
+                    <div class="qsBar">
+
+                      <label for="role">Job Role:</label>
+                      <select name="role">
+                        {% for role in roles %}  
+                          <option value="{{ role.id }}">{{ role.role }}</option>
+                        {% endfor %}
+                      </select>
+
+                    </div>
+
+                    <div class="qsBar">
+
+                      <label for="industry">Industry:</label>
+                      <select name="industry">
+                        {% for industry in industries %}
+                          <option value="{{ industry.id }}">{{ industry.industry }}</option>
+                        {% endfor %}
+                      </select>
+
+                    </div>
+
+                    <div class="qsBar">
+
+                      <label for="discipline">Discipline:</label>
+                      <select name="discipline">
+                        {% for discipline in disciplines %}
+                          <option value="{{ discipline.id }}">{{ discipline.discipline }}</option>
+                        {% endfor %}
+                      </select>
+
+                    </div>
+
+                    <div class="qsBar">
+
+                      <label for="region">Region:</label>
+                      <select name="region">
+                        {% for region in regions %}
+                          <option value="{{ region.id }}">{{ region }}</option>
+                        {% endfor %}
+                      </select>
+
+                    </div>
+
+                  </div>
+
+                  <!-- ADD END -->
+
+                  <div class="jobDescription">
+
+                    <label for="jobDesc">Job Description:</label>
+                    <textarea name="jobDesc"></textarea>
+
+                  </div>
+
+                  <div class="appReceive">
+
+                    <label for="appreceive">How would you like to receive applications for this job?</label>
+                    <div class="check1">
+                      <input type="radio" name="appRadio">
+                      <label for="writeApp">Write your method of application</label>
+                    </div>
+                    <div class="check2">
+                      <input type="radio" name="appRadio">
+                      <label for="emailApp">Receive applications through your email address</label>
+                    </div>
+                    <div class="check3">
+                      <input type="radio" name="appRadio">
+                      <label for="linkApp">Direct applications to a different website</label>
+                    </div>
+
+                  </div>
+
+
+                  <div class="appMethod">
+
+                    <label for="appMethod">Method of Application:</label>
+                    <textarea name="appMethod"></textarea>
+
+                  </div>
+
+                  <div class="postWhen">
+
+                    <div class="whenDiv">
+
+                      <input type="radio" name="postNow" value="True">
+                      <label for="postNow">Post Job Now</label>
+
+                    </div>
+
+                    <div class="whenDiv">
+
+                      <input type="radio" name="postNow" value="">
+                      <label for="postNow">Save job as a draft</label>
+
+                    </div>
+
+                  </div>
+
+                  <input class="subBut" type="submit">
+                </form>
+
+              </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>

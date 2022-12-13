@@ -1,0 +1,171 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/payStatus.css' %}">
+    <title>Payment Status</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <nav class="navbar">
+
+            <div class="topbar">
+
+                <p>Welcome {{ profile.user.full_name }}</p>
+  
+                <a href="{% url 'home' %}">Back to Homepage</a>
+  
+                {% include 'dropDiv.html' %}
+                  
+              </div>
+  
+              <div class="midbar">
+  
+                  <img onclick="window.location.href='./'" src="{% static 'img/clong.png' %}" alt="Logo">
+                  <h3 style="color: blue;">Total Job Credits: {{ profile.credit }}</h3>
+                <div class="butAlign">
+
+                    <button onclick="window.location.href='./buycredit'">Purchase Job Credits</button>
+
+                </div>
+
+            </div>
+
+            <div class="endbar"></div>
+
+        </nav>
+
+
+        <div class="dashContent">
+
+            <div class="leftContent">
+                <br>
+                <div class="picDiv">
+                    <img src="{% if profile.profile_pic.url %}{{ profile.profile_pic.url }}{% else %}{% static 'img/profile.png' %}{% endif %}" alt="Profile Picture">                    <br>
+                    <button style="margin-left: 20%;">Change Profile Picture</button>
+                </div>
+
+                <div class="leftOptions">
+
+                    <a href="/dashboard">Dashboard</a>
+                    <a href="/paidpost">Paid Job Post</a>
+                    <!-- <a href="">Manage Paid Posts</a> -->
+                    <a href="/freepost">Free Job Post</a>
+                    <!-- <a href="">Manage Free Posts</a> -->
+                    <a href="/addCompany">Add Company</a>
+                    <a href="/manageCompanies">Manage Companies</a>
+                    <a href="/buycredit">Buy Job Credits</a>
+                    <a href="/manageInvoice">Manage Invoices</a>
+                    <!-- <a href="">Transactions</a> -->
+
+                </div>
+
+                <div class="leftHelp">
+
+                    <div class="topHelp">
+                        Need Some Help?
+                    </div>
+
+                    {% include 'bottomHelp.html' %}
+                </div>
+
+            </div>
+
+            <div class="rightContent">
+
+                <div class="rightOptions">
+
+                    <a href="/paidpost">Paid Job Post</a>
+                    <a href="/manageCompanies">Manage Companies</a>
+                    <a href="/freepost">Free Job Post</a>
+                    <a href="/manageInvoice">Manage Invoices</a>
+                    
+                </div>
+                
+                <div class="rightDiv">
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://js.paystack.co/v1/inline.js"></script> 
+    <script>
+        
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        const url = "{% url 'paysuccess' %}"
+        const csrftoken = getCookie('csrftoken')
+
+        const sendData = async (object) => {
+            try{
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        "Content-type": "application/json",
+                        "X-CSRFToken": csrftoken,
+                    },
+
+                    body: JSON.stringify({
+                        reference: object.reference,
+                        order_status: object.status,
+                        transaction_id: object.transaction,
+                        amount: ('{{amount}}' /100)
+                })
+            })
+            }
+            catch(error){
+                console.log(error)
+            }
+
+        }
+
+        function payWithPaystack() {
+        var handler = PaystackPop.setup({
+            key: 'pk_test_164a7056a8047ffbf69aac3e0b862dd5e6449db1', // Replace with your public key
+            email: '{{email}}',
+            amount: '{{amount}}', // the amount value is multiplied by 100 to convert to the lowest currency unit. Done in Django Object Context
+            currency: 'NGN', // Use GHS for Ghana Cedis or USD for US Dollars
+            ref: '{{referrence_no}}', // Replace with a reference you generated
+            callback: function(response) {
+                //this happens after the payment is completed successfully
+                console.log(response)
+                sendData(response)
+                // Make an AJAX call to your server with the reference to verify the transaction
+            },
+            onClose: function() {
+                alert('Transaction was not completed, window closed.');
+            },
+        });
+        handler.openIframe();
+        }
+
+        payWithPaystack()
+
+    </script>
+</body>
+</html>

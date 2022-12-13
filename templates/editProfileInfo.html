@@ -1,0 +1,69 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Edit Profile</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <nav class="navbar">
+
+            <div class="topbar">
+
+                <!-- <p>Welcome username</p>
+
+                <a href="">Back to Homepage</a>
+
+                <p>icon</p> -->
+            </div>
+
+            <div class="midbar">
+
+                <a href="{% url 'home' %}"><img src="{% static 'img/clong.png' %}" alt="Logo"></a>
+                <div class="butAlign">
+
+
+                </div>
+
+            </div>
+
+            <div class="endbar"></div>
+
+        </nav>
+
+
+        <div class="dashContent">
+
+            <form method="POST">
+                {% csrf_token %}
+                <h1 style="text-align: center;">Edit Profile</h1>
+
+                <div class="formControl">
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email">
+
+                </div>
+
+                <div class="formControl">
+
+                    <label for="number">Phone Number:</label>
+                    <input class="numInput" type="number" name="number">
+
+                </div>
+
+                <input class="subBut" type="submit" value="Apply Changes">
+
+            </form>
+
+        </div>
+
+    </div>
+</body>
+</html>

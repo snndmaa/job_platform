@@ -1,0 +1,23 @@
+.optionDiv{
+    border: 2px solid yellowgreen;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.optionLinks{
+    background-color: lightcoral;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.optionLinks a{
+    font-size: x-large;
+    text-decoration: none;
+    margin-top: 5px;
+}

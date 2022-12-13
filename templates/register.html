@@ -1,0 +1,102 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/alert.css' %}">
+    <title>Recruiter Register</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <nav class="navbar">
+
+            <div class="topbar">
+
+                <!-- <p>Welcome username</p>
+
+                <a href="">Back to Homepage</a>
+
+                <p>icon</p> -->
+            </div>
+
+            <div class="midbar">
+
+                <a href="{% url 'home' %}"><img src="{% static 'img/clong.png' %}" alt="Logo"></a>
+                <div class="butAlign">
+
+
+                </div>
+
+            </div>
+
+            <div class="endbar"></div>
+
+        </nav>
+
+
+        <div class="dashContent">
+
+            <form method="POST">
+                {% csrf_token %}
+                {% include 'includes/alert.html' %}
+
+                <h1 style="text-align: center;">Recruiter Registration</h1>
+
+                <div class="formControl">
+
+                    <label for="fname">First Name:</label>
+                    <input type="text" name="fname">
+
+                </div>
+
+                <div class="formControl">
+
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="lname">
+
+                </div>
+
+                <div class="formControl">
+
+                    <label for="number">Phone Number:</label>
+                    <input type="text" name="number">
+
+                </div>
+
+                <div class="formControl">
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email">
+
+                </div>
+
+                <div class="formControl">
+
+                    <label for="password">Password:</label>
+                    <input type="password" name="password">
+
+                </div>
+
+                <div class="termDiv">
+
+                    <p style="margin: 0; color: blue;">By creating an account, you agree to our Terms of Service.</p>
+
+                </div>
+
+                <input class="subBut" type="submit" value="Sign in">
+
+                <p style="text-align: center;">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="{% static 'js/alert.js' %}"></script>
+</body>
+</html>

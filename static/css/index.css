@@ -1,0 +1,507 @@
+body{
+    border: 0;
+    margin: 0;
+}
+
+.container{
+    /* border: 2px solid salmon; */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.navContainer{
+    /* border: 2px solid salmon; */
+    width: 100%;
+    height: 20%;
+}
+
+.navTopBar{
+    width: 100%;
+    background-color: #D71D0D;
+    height: 20%;
+}
+
+.navContent{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 65%;
+    /* border: 2px solid yellow; */
+}
+
+.navLogo{
+    /* border: 2px solid purple; */
+    width: 50%;
+}
+
+.navLinks{
+    /* border: 2px solid grey; */
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navLinks a{
+    background-color: #1D2327;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+}
+
+.navLinks a:hover{
+    background-color: #D71D0D;
+    /* color: blue; */
+}
+
+.dropdown{
+    display: none;
+}
+
+.navFootDiv{
+    /* border: 2px solid blue; */
+    display: flex;
+    width: 100%;
+    height: 15%;
+}
+
+.navFootBar1{
+    background-color: #D71D0D;
+    width: 50%;
+    height: 100%;
+}
+
+.navFootBar2{
+    background-color: grey;
+    width: 50%;
+    height: 100%;
+}
+
+.adsense1{
+    border: 2px dotted grey;
+    width: 100%;
+    height: 30%;
+}
+
+.searchCon{
+    /* border: 2px solid purple; */
+    display: flex;
+    width: 100%;
+    height: 9%;
+    justify-content: center;
+}
+
+.searchDiv{
+    display: flex;
+    background-color: #D71D0D;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+}
+
+.searchDiv form{
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.searchbox{
+    height: 70%;
+    width: 70%;
+}
+
+.searchbut{
+    height: 66%;
+    background-color: lightgrey;
+    border: 1px solid white;
+}
+
+.categoryCon{
+    /* border: 2px solid yellow; */
+    width: 100%;
+    height: 10%;
+}
+
+.categoryDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.categoryDiv a{
+    /* border: 2px solid greenyellow; */
+    height: 65%;
+    width: 10%;
+    text-align: center;
+    margin-right: 2px;
+    background-color: #D71D0D;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+}
+
+.categoryDiv a:hover{
+    background-color: #1D2327;
+}
+
+.bodyContainer{
+    /* border: 2px solid yellow; */
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+
+.leftCon{
+    /* border: 2px solid greenyellow; */
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border-right: 1px solid grey;
+    word-break: break-word;
+}
+
+.midCon{
+    /* border: 2px dotted #D71D0D; */
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.rightCon{
+    /* border: 2px solid purple; */
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.freelink{
+    background-color: #D71D0D;
+    width: 60%;
+    height: 40px;
+    margin-left: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+
+.freelink:hover{
+    color: blue;
+}
+
+.leftJobByState{
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid black;
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 80%;
+}
+
+.leftJobByState a{
+    margin-top: 10px;
+    margin-left: 9px;
+    text-decoration: none;
+}
+
+.leftCertJobs{
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid black;
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 80%;
+    border-bottom: 3px solid black;
+}
+
+.leftCertJobs a{
+    margin-top: 10px;
+    margin-left: 9px;
+    text-decoration: none;
+}
+
+.subCatCon{
+    /* border: 2px solid yellowgreen; */
+    display: flex;
+    flex-direction: column;
+}
+
+.subCatCon p{
+    margin-left: 29px;
+    color: grey;
+}
+
+.subCatDiv{
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid black;
+    margin-left: 20px;
+    width: 80%;
+}
+
+.subCatDiv a{
+    margin-top: 10px;
+    margin-left: 9px;
+    text-decoration: none;
+}
+
+.midCon{
+    display: flex;
+    flex-direction: column;
+}
+
+.midSearchCon{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.midSearchDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid grey; */
+    width: 95%;
+}
+
+.midSearchDiv a{
+    text-decoration: none;
+}
+
+.midSearchBox{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.midSearchBox input:nth-child(1){
+    width: 40%;
+    height: fit-content;
+}
+
+.midSearchBox input:nth-child(2){
+    color: purple;
+    height: fit-content;
+    margin-bottom: 5px;
+}
+
+.midContent{
+    /* border: 1px dotted goldenrod; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid grey;
+}
+
+.featuredPost{
+    text-align: center;
+    background-color: blue;
+    color: white;
+    width: 50px;
+    height: 30px;
+    font-size: small;
+}
+
+.pinnedPost{
+    text-align: center;
+    background-color: orangered;
+    color: white;
+    width: 50px;
+    height: 30px;
+    font-size: small;
+}
+
+.midContentItem{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid turquoise; */
+    width: 95%;
+}
+
+.midContentItem:hover{
+    background-color: #f1f1f1;
+}
+
+.midItemTitle{
+    display: flex;
+    align-items: center;
+}
+
+.midItemTitle a{
+    text-decoration: none;
+}
+
+.midItemBody{
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+}
+
+.midItemPost a{
+    text-decoration: none;
+}
+
+.midPostTime p{
+    margin: 10px 0px 10px 0px;
+}
+
+.rightFiltDiv{
+    /* border: 1px solid pink; */
+    border-left: 0px;
+    border-radius: 20px;
+    width: 95%;
+    background-color: #F0F0F0;
+    margin-left: 10px;
+}
+
+.filterLabel{
+    position: relative;
+    top: 25px;
+    background-color: #F0F0F0;
+    width: fit-content;
+    margin-left: 10px;
+}
+
+.rInnerFilt{
+    border: 2px solid grey;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filtControl1{
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
+.filtControl2{
+    margin-left: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filtControl2 input{
+    width: 95%;
+    height: 40px;
+}
+
+.filtControl3{
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.filtControl4{
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.filtControl4 select{
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.filtSubmit{
+    width: 100%;
+    height: 35px;
+    background-color: #D71D0D;
+    color: white;
+}
+
+/* Smaller Screens */
+@media only screen and (max-width: 750px){
+    .navContent{
+        /* height: 50%; */
+    }
+    .navLinks{
+        display: none;
+    }
+    .dropdown{
+        display: inline-block;
+        position: relative;
+    }
+    .dropIcon{
+        background-color: #D71D0D;
+        color: white;
+        padding: 15px;
+        border: none;
+    }
+    .dropdown-content{
+        display: none;
+        position: relative;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .dropdown-content a{
+        color: #1D2327;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown-content a:hover{
+        background-color: #ddd;
+    }
+    .dropdown:hover .dropdown-content{
+        display: block;
+    }
+    .dropdown:hover .dropIcon{
+        background-color: orangered;
+    }
+    .leftCon{
+        word-break: break-word;
+    }
+    .freelink{
+        width: fit-content;
+        height: fit-content;
+    }
+    .midSearchCon{
+        display: none;
+    }
+    .searchCon{
+        height: 6%;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .categoryDiv{
+        width: 100vw;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .categoryDiv a{
+        /* height: 50%; */
+        width: 20%;
+        margin-bottom: 2px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .midCon{
+        width: 75%;
+    }
+    .rightCon{
+        display: none;
+    }
+}

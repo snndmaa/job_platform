@@ -1,0 +1,11 @@
+.alert{
+    font-size: larger;
+}
+
+.alert-success{
+    color: #22bb33;
+}
+
+.alert-error{
+    color: #ff0033;
+}
